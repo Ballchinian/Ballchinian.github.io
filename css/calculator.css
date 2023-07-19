@@ -1,0 +1,32 @@
+table caption input {
+    text-align:right;  /*puts 0 on the right on the display*/
+}
+
+table {
+    width:95%;
+    border: 0.1em solid black;
+    border-collapse: collapse;
+    margin-left: 2.5%;
+    background-color: black;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+table caption {
+    border:0.1em solid black;
+    font-size:2em;
+    background-color: black;
+}
+
+th,td {
+    border:0.1em solid black;
+    padding:0.5em;
+    text-align: center;
+    background-color: black;
+}
+
+input {
+    width:95%;
+    height:4em;
+    font-size:2em;
+}

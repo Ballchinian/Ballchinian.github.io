@@ -1,0 +1,232 @@
+
+
+
+body {
+    background-image: linear-gradient(white,black);
+}
+header {
+    background-image: linear-gradient(to right, grey,black, black,black);
+    box-shadow: 0.3em 0.3em 0.3em skyblue ;
+}
+header img {
+    width: 100%;  /*stretchs the image across the viewport.*/
+    height: auto; /*viewport meta allows for responsive images*/
+    max-width: 650px;
+}
+
+
+
+nav {
+    /*background-color: white;
+    border-top: solid 0.3em black;
+    border-bottom: solid 0.3em black;*/
+    border-radius: 1em;
+    margin-bottom: 1em;
+    border-left: 1em;
+    border-right: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+nav ul{
+    padding: 0.1em;
+    margin-top:0.2em;
+    margin-bottom:0.2em;
+}
+
+nav ul li{
+    list-style-type: none;
+    padding: 0.5em;
+    margin: 0.05em;
+    min-width: 13%;
+    background-position:left;
+    background-color:black;
+}
+
+nav ul li a{
+    color:rgb(198, 251, 255);
+    text-decoration: none; /*removes the underline from hyperlink*/
+}
+
+figure {
+    text-align: center;
+}
+figure img {
+    max-width: 800px;
+    max-height:600px;
+    height:auto;
+    width: 100%;
+
+}
+main {
+    border-radius: 1em;
+    background-image: linear-gradient(white, grey);
+    margin-bottom: 2em;
+    border-style:solid;
+    border-color: lightskyblue;
+    border-width:0.5em;
+}
+
+/*This was for our three column layout*/
+main .row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+main div .column{
+    float:left;
+}
+
+main div .left{
+    width: 20%;
+    float:left;
+    padding:10px;
+}
+
+main div .center{
+    padding:10px;
+}
+
+main div .right{
+    width: 29%;
+    float:right;
+    padding:1px;
+}
+/*three column layout end*/
+
+
+/*Scheduale begin*/
+.schedule table {
+    margin-top:1em;
+    margin-bottom:1em;
+    border-collapse: collapse;
+    width:95%;
+    margin-left: 2.5%;
+}
+.schedule caption{
+    padding:0.3em;
+    border:0.12em solid black;
+    font-size:1.5em;
+    font-weight: bold;
+}
+
+.schedule th, .schedule td{
+    border:0.12em solid black;
+    padding:0.5em;
+    font-weight:bold;
+    text-align: center;
+}
+
+.schedule th {
+    background-color:black;
+    color:white
+    
+}
+
+#enrollprice {
+    border:0.1em solid black;
+    border-collapse: collapse;
+}
+
+#enrollprice td {
+    padding:0.5em;
+    text-align:center;
+    border:0.1em solid black;
+}
+/*Scheduale end*/
+
+footer {
+    -webkit-text-size-adjust: 90%;
+    margin-top:1em;
+    border-radius: 1em;
+    border-style: solid;
+    border-width:0.4em;
+    border-color: lightskyblue;
+    background-image: linear-gradient(white , grey);
+    /*background-color: white;
+    border-top: solid 0.3em black;
+    border-bottom: solid 0.3em black;*/
+}
+
+/*Begin mobile.*/
+@media screen and (max-width: 639px) {
+
+    nav ul li {
+        background-color: black;
+        border-style: solid;
+        border-color: skyblue;
+    }
+
+    .tablet {
+        display:none;
+    }
+
+    .desktop {
+        display:none;
+    }
+}
+
+/*Begin tablet.*/
+@media screen and (min-width: 641px) {
+
+    nav ul li {
+        display: inline-block; /*lists items horrizontaly*/
+        border-radius: 1em;
+        border-top: solid 0.25em black; /*border top allows expansion of border (have to include all parameters*/
+        border-bottom: solid 0.25em black;
+        margin: 0.5em;
+        font-size: 1.4em;
+        box-shadow: 0.5em 0.5em 0.5em grey;
+    }
+
+    .desktop {
+        display:none;
+    }
+
+    main div .center{
+        width:66%;
+        border-right: 0.3em solid grey;
+    }
+}
+
+/*Begin desktop.*/
+@media screen and (min-width: 1100px) {
+
+    header{
+        width:auto;
+        height:6em;
+        text-align: left;
+    }
+
+    nav {
+        float:right;   /*moves it to the right and tries to raise it*/
+        margin-top:-6em; /*tried to remove margin above to allow it*/
+        width: 58%;
+        background-color: black;
+        border-radius:0em;
+    }
+
+    
+
+    nav ul li {
+        display:inline-block;
+        width: 13.6%;
+        box-shadow: none;
+        min-width: 12%;
+    }
+
+    .desktop {
+     
+        display:block;
+    }
+
+    main div .center{
+        border-left: 0.3em solid grey;
+        width: 45%;
+    }
+
+    header img {
+        max-width: 460px;
+    }
+}
