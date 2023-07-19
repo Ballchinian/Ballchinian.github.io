@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enroll</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="css/style.css">
+
+        <script type="text/javascript">
+
+            function calculate() {
+                var course=0;
+                var uniforms=0;
+                var total=0;
+
+                if (document.getElementById("adult").checked==true) {
+                    
+                    course=50;
+                }
+                else if (document.getElementById("teen").checked==true) {
+
+                    course=30;
+                }
+                else if (document.getElementById("child").checked==true) {
+
+                    course=15;
+                }
+
+                uniforms=50*document.getElementById("uniforms").value;
+
+                total=course+uniforms;
+
+
+                alert("your total cost is: $ "+total);
+
+                var myListItem=document.createElement("tr");
+
+                textToAdd = document.getElementById("add").value
+                console.log(textToAdd)
+
+                var myTextNode = document.createTextNode(textToAdd);
+                myListItem.appendChild(myTextNode)
+
+                var placement = document.getElementById("place")
+                placement.appendChild(myListItem)
+            }
+
+            
+        </script>
+
+
+
+
+    </head>
+
+    <body>
+        <header><img src="Media/images/newLogo.png" alt="Martial arts dojo logo"></header>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="gimp.html">Photos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <table id="place">
+
+                <tr>
+                    <td><label for="firstname">First name</label></td>
+                    <td><input type="text" id="firstname" name="firstname"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="lastname">Last name</label></td>
+                    <td><input type="text" id="lastname" name="lastname"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td><input type="email" id="email" name="email"><!--input type has to be email to register as email--></td>
+                </tr>
+
+                <tr>
+                    <td><label for="phone">Phone</label></td>
+                    <td><input type="tel" id="phone" name="phone"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="add">What category do you want added?</label></td>
+                    <td><input type="text" id="add" name="Add"></td>
+                </tr>
+
+             </table>
+
+
+            <table id="enrollprice">
+
+                <caption>Enroll</caption>
+
+                <tr>
+                    <td>Adult</td>
+
+                    <td>$50</td>
+                    <!--name allows for type radio to share between all options-->
+                    <td><input type="radio" id="adult" name="course" value="50"></td>
+                </tr>
+
+                <tr>
+                    <td>Teen</td>
+
+                    <td>$30</td>
+
+                    <td><input type="radio" id="teen" name="course" value="30"></td>
+                </tr>
+
+                <tr>
+                    <td>Child</td>
+
+                    <td>$15</td>
+
+                    <td><input type="radio" id="child" name="course" value="15"></td>
+                </tr>
+
+                <tr>
+                    <td>Uniforms</td>
+
+                    <td>$50</td>
+
+                    <td><input type="number" id="uniforms" min="0" value=""></td>
+                </tr>
+
+            </table>
+
+            <p><input type="submit" id="submit" value="Submit" onclick="calculate()"></p><br>
+            <input type="reset" id="reset" value="Reset">
+
+        </main>
+
+    </body>
+</html>
